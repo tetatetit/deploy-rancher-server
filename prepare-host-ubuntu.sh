@@ -3,7 +3,7 @@
 # Swap
 if [ -n $(swapon -s) ]; then
   ramSize=$(free -m | grep -oP '\d+' | head -n 1)
-  fallocate -l $(($ramSize * 2))m /swap
+  fallocate -l $(($ramSize * 1))m /swap
   chmod 0600 /swap
   mkswap /swap
   swapon /swap
